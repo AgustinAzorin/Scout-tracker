@@ -1,0 +1,17 @@
+{
+  "name": "scout-tracker",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "backend",
+    "frontend-web",
+    "frontend-mobile",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:backend": "npm run dev -w backend",
+    "dev:web": "npm run dev -w frontend-web",
+    "dev:mobile": "npm run start -w frontend-mobile",
+    "build": "npm run build -w packages/shared-types && npm run build -w packages/shared-utils && npm run build -w backend && npm run build -w frontend-web"
+  }
+}

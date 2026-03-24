@@ -1,0 +1,6 @@
+# Supabase-specific ignores
+.supabase/
+config.json
+*.local.json
+supabase/functions/.env
+supabase/functions/node_modules/

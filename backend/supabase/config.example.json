@@ -1,0 +1,8 @@
+{
+  "projectId": "your-supabase-project-id",
+  "apiUrl": "https://your-project-id.supabase.co",
+  "dbUrl": "postgresql://postgres:password@db.your-project-id.supabase.co:5432/postgres",
+  "anonKey": "your-anon-key",
+  "serviceRoleKey": "your-service-role-key",
+  "notes": "Complete these values from your Supabase project settings and copy to ../.env.local in the backend root"
+}

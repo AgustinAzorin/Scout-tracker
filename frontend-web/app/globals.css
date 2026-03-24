@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modo Claro (Light Mode) */
+:root {
+  /* Colores base */
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.6%;
+  
+  /* Colores secundarios */
+  --muted: 0 0% 96.1%;
+  --muted-foreground: 0 0% 45.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.6%;
+  
+  /* Colores heredados para compatibilidad */
+  --bg: #f8f5ee;
+  --surface: #ffffff;
+  --ink: #1f1a14;
+  --accent: #0f6c5a;
+}
+
+/* Modo Oscuro (Dark Mode) */
+html.dark {
+  /* Colores base */
+  --background: 217.2 32.6% 17.5%;
+  --foreground: 210 40% 96%;
+  
+  /* Colores secundarios */
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --card: 217.2 32.6% 17.5%;
+  --card-foreground: 210 40% 96%;
+  
+  /* Colores heredados para compatibilidad */
+  --bg: #111827;
+  --surface: #1f2937;
+  --ink: #e5e7eb;
+  --accent: #22a27a;
+}
+
+/* Aplicar estilos base */
+body {
+  background: radial-gradient(circle at 10% 20%, #fff9ec 0%, var(--bg) 40%, #efe7d6 100%);
+  color: var(--ink);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background: radial-gradient(circle at 10% 20%, #1f2937 0%, var(--bg) 55%, #0b1220 100%);
+}
+
+/* Transiciones suaves para dark mode */
+html {
+  color-scheme: light;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Compatibilidad con componentes existentes */
+html.dark .bg-white {
+  background-color: var(--surface);
+}
+
+html.dark .border-neutral-200 {
+  border-color: #374151;
+}
+
+html.dark .text-neutral-500,
+html.dark .text-neutral-600,
+html.dark .text-neutral-700 {
+  color: #cbd5e1;
+}
+
+html.dark .hover\:bg-neutral-50:hover {
+  background-color: #273244;
+}
+
+/* Estilos para el scrollbar */
+html.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #5a6577;
+}

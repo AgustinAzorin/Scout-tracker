@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "Scout Tracker",
+    "slug": "scout-tracker",
+    "scheme": "scouttracker",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "plugins": ["expo-router", "expo-notifications", "expo-secure-store"],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

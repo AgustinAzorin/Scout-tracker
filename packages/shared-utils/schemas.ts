@@ -38,6 +38,10 @@ export const scoutUpdateSchema = z.object({
   is_active: z.boolean().optional()
 });
 
+export const scoutCreateSchema = scoutUpdateSchema.extend({
+  numero: z.number().int().positive().optional()
+});
+
 export const loginSchema = z.object({
   email: z.string().email(),
   password: z.string().min(8)

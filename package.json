@@ -19,5 +19,7 @@
   },
   "overrides": {
     "react-native-screens": "3.31.1"
+  },
+  "devDependencies": {
   }
 }

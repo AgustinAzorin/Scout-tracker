@@ -1,7 +1,7 @@
 import type { NextRequest } from "next/server";
 import { db } from "@/lib/db";
 import { fail, humanizeDbError, humanizeZodIssue, ok } from "@/lib/http";
-import { scoutUpdateSchema } from "@scout/shared-utils";
+import { scoutCreateSchema } from "@scout/shared-utils";
 
 export async function GET(req: NextRequest) {
   const params = req.nextUrl.searchParams;
@@ -26,7 +26,7 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  const parsed = scoutUpdateSchema.safeParse(await req.json());
+  const parsed = scoutCreateSchema.safeParse(await req.json());
   if (!parsed.success) return fail(humanizeZodIssue(parsed.error.issues[0]), 400);
 
   const payload = { ...parsed.data };

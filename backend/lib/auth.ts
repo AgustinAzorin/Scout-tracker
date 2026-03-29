@@ -1,9 +1,10 @@
-import bcrypt from "bcryptjs";
-import jwt, { type JwtPayload } from "jsonwebtoken";
+// @ts-ignore - bcryptjs lacks proper type definitions
+const bcrypt = require("bcryptjs");
+import jwt, { type JwtPayload, type SignOptions } from "jsonwebtoken";
 import { randomUUID, createHash } from "node:crypto";
 
-const JWT_SECRET = process.env.JWT_SECRET ?? "dev-secret-change-this-in-prod";
-const JWT_EXPIRY = process.env.JWT_EXPIRY ?? "1h";
+const JWT_SECRET: string = process.env.JWT_SECRET ?? "dev-secret-change-this-in-prod";
+const JWT_EXPIRY: string = process.env.JWT_EXPIRY ?? "1h";
 const REFRESH_TOKEN_EXPIRY_DAYS = Number(process.env.REFRESH_TOKEN_EXPIRY_DAYS ?? 7);
 
 export interface AccessTokenPayload extends JwtPayload {
@@ -14,7 +15,8 @@ export interface AccessTokenPayload extends JwtPayload {
 }
 
 export function signAccessToken(payload: Omit<AccessTokenPayload, "iat" | "exp">): string {
-  return jwt.sign(payload, JWT_SECRET, { expiresIn: JWT_EXPIRY });
+  const options: SignOptions = { expiresIn: JWT_EXPIRY as any };
+  return jwt.sign(payload, JWT_SECRET, options);
 }
 
 export function verifyAccessToken(token: string): AccessTokenPayload {

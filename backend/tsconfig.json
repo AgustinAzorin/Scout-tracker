@@ -14,6 +14,9 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "@scout/*": [
+        "../packages/*"
       ]
     },
     "noEmit": true,

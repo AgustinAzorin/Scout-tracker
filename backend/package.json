@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.0.0",
-    "@scout/shared-types": "0.1.0",
-    "@scout/shared-utils": "0.1.0",
+    "@scout/shared-types": "workspace:*",
+    "@scout/shared-utils": "workspace:*",
     "@supabase/supabase-js": "^2.49.1",
     "bcryptjs": "^2.4.3",
     "date-fns": "^4.1.0",

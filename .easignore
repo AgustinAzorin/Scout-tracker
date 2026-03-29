@@ -1,0 +1,31 @@
+node_modules/
+.git
+.git/
+.next/
+**/.inspect/
+**/.expo/
+**/dist/
+**/build/
+dist/
+build/
+coverage/
+.expo/
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Exclude unrelated workspaces from the EAS upload.
+backend
+backend/
+frontend-web
+frontend-web/
+frontend-mobile/.expo
+frontend-mobile/.expo/
+frontend-mobile/dist
+frontend-mobile/dist/
+
+# Exclude repo docs that are not needed for the mobile build.
+GETTING_STARTED.md
+README.md

@@ -5,9 +5,25 @@
     "scheme": "scouttracker",
     "version": "1.0.0",
     "orientation": "portrait",
-    "plugins": ["expo-router", "expo-notifications", "expo-secure-store"],
+    "plugins": [
+      "expo-router",
+      "expo-notifications",
+      "expo-secure-store"
+    ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "24b5c7a3-db21-4af2-96f7-6afaecd4f100"
+      }
+    },
+    "android": {
+      "package": "com.lopachon123d.scouttracker"
+    },
+    "owner": "lopachon123d"
   }
 }
